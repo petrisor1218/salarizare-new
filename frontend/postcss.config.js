@@ -1,8 +1,6 @@
-try {
-module.exports = {
+export default {
   plugins: {
     tailwindcss: {},
     autoprefixer: {},
   },
 }
-} catch (error) { console.error(error); }
