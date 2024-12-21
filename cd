@@ -1,0 +1,26 @@
+// Import necessary modules
+const express = require('express');
+const path = require('path');
+
+// Initialize express app
+const app = express();
+
+// Set the port
+const PORT = process.env.PORT || 3000;
+
+// Middleware to serve static files (frontend)
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Body parser middleware
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+// Sample backend endpoint
+app.get('/api/hello', (req, res) => {
+    res.json({ message: 'Hello from the backend!' });
+});
+
+// Start the server
+app.listen(PORT, () => {
+    console.log(`Server is running on http://localhost:${PORT}`);
+});
