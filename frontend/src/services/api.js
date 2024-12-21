@@ -41,7 +41,7 @@ api.interceptors.response.use(
 
 // API methods
 const authAPI = {
-    login: (credentials) => api.post('/api/auth/login', credentials),
+    login: (credentials) => api.post('/auth/login', credentials),
     getCurrentUser: () => api.get('/api/auth/me'),
 };
 

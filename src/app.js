@@ -26,7 +26,7 @@ app.use(express.json());
 connectDB();
 
 // Routes
-app.use('/api/auth', authRoutes);
+app.use('/api', authRoutes);
 app.use('/api/vehicles', auth, vehicleRoutes);
 app.use('/api/drivers', auth, driverRoutes);
 app.use('/api/holidays', auth, holidayRoutes);
