@@ -22,7 +22,9 @@ router.get('/:id', async (req, res) => {
     try {
         const driver = await Driver.findById(req.params.id)
             .populate('vehiculAsignat')
-            .populate('istoricVehicule.vehicul');
+            .populate('istoricVehicule.vehicul')
+            .populate('concedii')
+            .populate('plati');
         if (!driver) {
             return res.status(404).json({ message: 'Șoferul nu a fost găsit' });
         }

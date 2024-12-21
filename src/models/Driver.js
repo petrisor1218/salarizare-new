@@ -96,6 +96,14 @@ const driverSchema = new mongoose.Schema({
         trim: true,
         index: true
     },
+    concedii: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Holiday'
+    }],
+    plati: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Salary'
+    }],
     cnp: {
         type: String,
         required: true,
